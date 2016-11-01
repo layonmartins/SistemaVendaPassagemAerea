@@ -1,0 +1,38 @@
+#######################################################
+##          AUTOR: Layon Martins   - ufscar          ##
+## COMANDOS BASICOS DO GRAILS VERSÃO 3.1.10 - 2016/2 ##
+#######################################################
+
+#CRIAR UMA NOVA APLICAÇÃO GRAILS
+$ grails create-app nomedasuaplicacao
+obs: ele cria uma pasta como nome da sua aplicação
+
+#CRIAR CONTROLES
+$ grails create-controller nomedoseucontroler
+
+#CRIAR UM DOMINIO
+$ grails create-domain-class nomedaclassedominio
+obs: costuma se colocar a pasta onde sera criada, create-domain-class br.ufscar.NomeDoDominio
+
+
+#GERAR VIEWS
+$ grails generate-views nomedaview
+obs: tbm se coloca a pasta.
+
+#GERAR CONTROLES E VIEWS
+$ grails generate-all nomedodomain
+$ grails generate-all "*" obs: este gera td de tds q estiverem na pasta
+
+#COMPILAR PARA TESTAR ERRORS
+$ grails compile
+
+#EXECUTAR A APLICAÇÃO
+$ grails run-app
+obs: sobe a aplicação para um servidor web interno,  http://localhost:8080
+
+#PARAR A APLICAÇÃO
+$ stop-app
+$ Ctrl+C
+
+
+
