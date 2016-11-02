@@ -1,0 +1,9 @@
+#######################################################
+##          AUTOR: Layon Martins   - ufscar          ##
+## COMANDOS DE CRIACAO DO SISTEMA VENDASAEREA 2016/2 ##
+#######################################################
+
+#Para criar as classes de dominio use:
+$ grails create-domain-class br.ufscar.vpa.Aviao
+
+
