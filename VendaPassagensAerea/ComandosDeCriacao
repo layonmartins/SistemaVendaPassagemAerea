@@ -4,6 +4,11 @@
 #######################################################
 
 #Para criar as classes de dominio use:
-$ grails create-domain-class br.ufscar.vpa.Aviao
+
+grails>
+create-domain-class br.ufscar.vpa.Aviao
+create-domain-class br.ufscar.vpa.Voo
+create-domain-class br.ufscar.vpa.Especificacao
+create-domain-class br.ufscar.vpa.Cidade
 
 
