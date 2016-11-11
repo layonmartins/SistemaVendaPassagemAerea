@@ -10,5 +10,9 @@ create-domain-class br.ufscar.vpa.Aviao
 create-domain-class br.ufscar.vpa.Voo
 create-domain-class br.ufscar.vpa.Especificacao
 create-domain-class br.ufscar.vpa.Cidade
+create-domain-class br.ufscar.vpa.Compra
+create-domain-class br.ufscar.vpa.CompraVoo
+
+
 
 

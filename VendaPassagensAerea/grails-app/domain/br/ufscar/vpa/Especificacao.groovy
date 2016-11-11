@@ -6,7 +6,7 @@ class Especificacao {
     	custo(nullable:false, min: 200)
     	horaPartida(nullable:false)
     	horaChegada(nullable:false)
-    	tipo(nullable:false, inList: [Direto, Escala])
+    	tipo(nullable:false, inList: ["Direto", "Escala"])
     	origem(nullable:false)
     	destino(nullable:false)
     }

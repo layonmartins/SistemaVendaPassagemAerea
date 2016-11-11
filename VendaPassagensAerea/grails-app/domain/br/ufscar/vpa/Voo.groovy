@@ -2,6 +2,7 @@ package br.ufscar.vpa
 
 class Voo {
 
+	static hasMany = [compravoo:CompraVoo]
     static constraints = {
     	numeroVoo(nullable:false, min: 0)
     	data(nullable: false)
