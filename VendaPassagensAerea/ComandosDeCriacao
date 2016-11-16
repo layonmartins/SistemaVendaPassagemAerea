@@ -43,8 +43,16 @@ generate-all br.ufscar.vpa.Voo
 
 #Parei em:
 >criei bootstrap 'populando aviao - ok'
--> continuar no bootstrap
+-> continuar no bootstrap populando Voo
+
+#Problemas ao trabalhar com date, então resolvi mudar os campos de horas da class Especificacao para String.
+
+#Instalar template
+> grails install-templates
+
+
 
 #Tbm inserir o botão logout, não esquecer do esquema do false
+
 
 

@@ -11,4 +11,9 @@ class Cidade {
     String nome
     String estado
     String pais
+    
+    @Override
+    String toString(){
+    	return nome
+    }
 }
