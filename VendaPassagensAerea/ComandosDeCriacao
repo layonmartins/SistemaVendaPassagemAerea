@@ -38,3 +38,13 @@ generate-all br.ufscar.vpa.Especificacao
 generate-all br.ufscar.vpa.Voo
 
 
+#Controle de acesso
+#todos os controller da aplicação esta disponivel para o usuario admin
+
+#Parei em:
+>criei bootstrap 'populando aviao - ok'
+-> continuar no bootstrap
+
+#Tbm inserir o botão logout, não esquecer do esquema do false
+
+
