@@ -14,18 +14,12 @@ class Usuario implements Serializable {
 	String username
 	String password
 	
-	//String nome
-	//String sobreNome
-	//String email
-	//Date dataNascimento
-	//String passaporte
 	
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
 
-	//talvez deverá alterar o construtor passando os parametros adicionados manualmente
 	Usuario(String username, String password) {
 		this()
 		this.username = username
@@ -55,11 +49,7 @@ class Usuario implements Serializable {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
-	//	nome (blank: false, size:1..20)
-	//	sobreNome (blank: false, size:1..20)
-		//email (blank: false, unique: true, email: true)
-		//dataNascimento (blank: false)
-		//passaporte (blank: false)
+	 
 	}
 
 	static mapping = {

@@ -7,6 +7,7 @@ import br.ufscar.vpa.Compra
 import br.ufscar.vpa.CompraVoo
 import br.ufscar.vpa.Especificacao
 import br.ufscar.vpa.Voo
+import br.ufscar.vpa.Cliente
 
 
 class BootStrap {
@@ -19,7 +20,6 @@ class BootStrap {
         def admin = new Usuario(
             username: "a",
             password: "a",
-         //   nome: "Administrador",
             enabled : true
         )
         
@@ -31,6 +31,30 @@ class BootStrap {
         UsuarioPapel.create(admin,adminPapel)
        
         println 'populando usuário admin - ok'
+        
+        
+        def clientePapel = Papel.findByAuthority("ROLE_CLIENTE") ?:
+        new Papel(authority: "ROLE_CLIENTE").save()
+                
+        def cliente = new Cliente(
+            nome: "Cliente",
+            sobreNome: "Teste",
+            email: "cliente@cliente.com",
+            dataNascimento: new Date(),
+            passaporte: "0001.00001.000-03",
+            username: "c",
+            password: "c",
+            enabled : true
+        )
+        
+        cliente.save()
+        if (cliente.hasErrors()) {
+            println cliente.errors
+        }
+        
+        UsuarioPapel.create(cliente,clientePapel)
+       
+        println 'populando cliente  - ok'
         
         
         def aviao1 = new Aviao(
@@ -147,8 +171,8 @@ class BootStrap {
         def bogotaPassos = new Especificacao(
         	custo: 600d,
         	horaPartida: "13:00",
-        	horaChegada: "23:00",
-        	tempoVoo: "10:00",
+        	horaChegada: "20:00",
+        	tempoVoo: "07:00",
 			tipo: "ESCALA",
 			origem: bogota,
 			destino: passos 
@@ -162,8 +186,8 @@ class BootStrap {
         def bogotaSanca = new Especificacao(
         	custo: 450d,
         	horaPartida: "13:00",
-        	horaChegada: "20:00",
-        	tempoVoo: "06:00",
+        	horaChegada: "17:00",
+        	tempoVoo: "04:00",
 			tipo: "DIRETO",
 			origem: bogota,
 			destino: sanca
@@ -176,8 +200,8 @@ class BootStrap {
          //DIRETO (Sanca > Passos)
         def sancaPassos = new Especificacao(
         	custo: 450d,
-        	horaPartida: "20:30",
-        	horaChegada: "23:00",
+        	horaPartida: "18:00",
+        	horaChegada: "20:00",
         	tempoVoo: "02:30",
 			tipo: "DIRETO",
 			origem: sanca,
@@ -188,7 +212,7 @@ class BootStrap {
         	println sancaPassos.errors
         	
         	
-        //DIRETO (Sanca > Passos)
+        //DIRETO (Passos > Sanca)
         def passosSanca = new Especificacao(
         	custo: 100d,
         	horaPartida: "02:00",
@@ -224,9 +248,45 @@ class BootStrap {
         
         
         
-        
+        //Criando voo de Escala Bogota > Passos
+        def Voo01Escala = new Voo(
+        	numeroVoo: "Voo" + bogotaPassos.origem + bogotaPassos.destino + new Date().format("dd_MM_yy"),
+        	data: new Date(),
+        	lugaresDisponiveis: aviao2.quantidadePoltrona,
+        	aviao: aviao2,
+        	especificacao: bogotaPassos
+        )
+        Voo01Escala.save()
+        if(Voo01Escala.hasErrors())
+        	println Voo01Escala.errors
+        	
+        //Criando Voo direto, derivado da escala assima Bogota > Sanca
+        def Voo01DiretoA = new Voo(
+        	numeroVoo: "Voo" + bogotaSanca.origem + bogotaSanca.destino + new Date().format("dd_MM_yy"),
+        	data: new Date(),
+        	lugaresDisponiveis: aviao2.quantidadePoltrona,
+        	aviao: aviao2,
+        	especificacao: bogotaSanca
+        )
+        Voo01DiretoA.save()
+        if(Voo01DiretoA.hasErrors())
+        	println Voo01DiretoA.errors
+        	
+        	
+        //Criando Voo direto, derivado da escala assima Sanca > Passos
+        def Voo01DiretoB = new Voo(
+        	numeroVoo: "Voo" + sancaPassos.origem + sancaPassos.destino + new Date().format("dd_MM_yy"),
+        	data: new Date(),
+        	lugaresDisponiveis: aviao2.quantidadePoltrona,
+        	aviao: aviao2,
+        	especificacao: sancaPassos
+        )
+        Voo01DiretoB.save()
+        if(Voo01DiretoB.hasErrors())
+        	println Voo01DiretoB.errors
         
         println 'Populando Voo'
+        
         
         
     }

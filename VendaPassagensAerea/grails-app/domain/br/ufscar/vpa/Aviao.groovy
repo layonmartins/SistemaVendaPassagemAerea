@@ -12,4 +12,8 @@ class Aviao {
     String modelo
     int quantidadePoltrona
     
+    @Override
+    String toString(){
+    	return modelo + " - " + linhaAerea
+    }
 }

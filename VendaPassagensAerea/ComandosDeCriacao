@@ -12,6 +12,7 @@ create-domain-class br.ufscar.vpa.Especificacao
 create-domain-class br.ufscar.vpa.Cidade
 create-domain-class br.ufscar.vpa.Compra
 create-domain-class br.ufscar.vpa.CompraVoo
+create-domain-class br.ufscar.vpa.Cliente
 
 
 
@@ -36,6 +37,7 @@ generate-all br.ufscar.vpa.Compra
 generate-all br.ufscar.vpa.CompraVoo
 generate-all br.ufscar.vpa.Especificacao
 generate-all br.ufscar.vpa.Voo
+generate-all br.ufscar.vpa.Cliente
 
 
 #Controle de acesso
@@ -54,5 +56,10 @@ generate-all br.ufscar.vpa.Voo
 
 #Tbm inserir o botão logout, não esquecer do esquema do false
 
+#Desafio, ao inserir o Voo com Escala, automaticamente inserir os voos Diretos derivados dessa escala, inclusive na Especificacao se puder
 
+#O Comando de S2-quickStart não cria os controllers e view para os usuarios, pensando bem nem precisa, decidi alterar a modelagem, inserindo uma classes cliente para ficar no lugar de Usuario, herdando da classes usuario, e tbm retirando os atributos adicionais de usuario.
+
+
+#finalizar Cadastro de Clientes, exibição de fields
 

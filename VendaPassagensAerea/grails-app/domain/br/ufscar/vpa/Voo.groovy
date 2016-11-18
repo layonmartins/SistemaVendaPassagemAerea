@@ -4,13 +4,13 @@ class Voo {
 
 	static hasMany = [compravoo:CompraVoo]
     static constraints = {
-    	numeroVoo(nullable:false, min: 0)
+    	numeroVoo(blank:false)
     	data(nullable: false)
     	lugaresDisponiveis(nullable:false, min: 0)
     	aviao(nullable: false)
     }
     
-    int numeroVoo
+    String numeroVoo
     Date data
     int lugaresDisponiveis
     
