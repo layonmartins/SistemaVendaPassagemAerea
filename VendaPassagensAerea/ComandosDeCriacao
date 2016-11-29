@@ -15,7 +15,6 @@ create-domain-class br.ufscar.vpa.CompraVoo
 create-domain-class br.ufscar.vpa.Cliente
 
 
-
 #Para criar as classes de autenticação, Usuario, Papel e usuarioPapel use "Spring Security"
 
 Import em buil.gradle:
@@ -25,7 +24,6 @@ compile "org.grails.plugins:spring-security-core:3.0.1"
 grails> s2-quickstart br.ufscar.vpa Usuario Papel
 #inserir os atributos manualemente
 #obs: //talvez deverá alterar o construtor passando os parametros adicionados manualmente
-
 
 
 #Gerar os controles e views
@@ -43,8 +41,8 @@ generate-all br.ufscar.vpa.Cliente
 #Controle de acesso
 #todos os controller da aplicação esta disponivel para o usuario admin
 
-#Parei em:
->criei bootstrap 'populando aviao - ok'
+#BootStrap Init
+>criei bootstrap 'populando voo - ok'
 -> continuar no bootstrap populando Voo
 
 #Problemas ao trabalhar com date, então resolvi mudar os campos de horas da class Especificacao para String.
@@ -52,14 +50,27 @@ generate-all br.ufscar.vpa.Cliente
 #Instalar template
 > grails install-templates
 
-
-
 #Tbm inserir o botão logout, não esquecer do esquema do false
 
 #Desafio, ao inserir o Voo com Escala, automaticamente inserir os voos Diretos derivados dessa escala, inclusive na Especificacao se puder
 
 #O Comando de S2-quickStart não cria os controllers e view para os usuarios, pensando bem nem precisa, decidi alterar a modelagem, inserindo uma classes cliente para ficar no lugar de Usuario, herdando da classes usuario, e tbm retirando os atributos adicionais de usuario.
+#E possivel configurar o Spring Security no diretorio conf/application.groovy
 
 
 #finalizar Cadastro de Clientes, exibição de fields
+
+#No Scaffold os lugaresDisponiveis do Voo deve pegar os lugaresDisponiveis do avião, isso já e feito no bootstrap.
+
+#Criar controller manualemente usando ajax para os clientes fazerem as compras, com lista de itens
+#add compile 'org.grails.plugins:ajax-tags:1.0.0.RC1' em build.gradle
+#crear o controller comprar
+> grails create-controller br.ufscar.vpa.Comprar
+#configurado e funcionando
+
+
+
+
+
+
 

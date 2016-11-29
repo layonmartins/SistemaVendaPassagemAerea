@@ -40,7 +40,7 @@ class BootStrap {
             nome: "Cliente",
             sobreNome: "Teste",
             email: "cliente@cliente.com",
-            dataNascimento: new Date(),
+            dataNascimento: new Date().clearTime(),
             passaporte: "0001.00001.000-03",
             username: "c",
             password: "c",
@@ -218,7 +218,6 @@ class BootStrap {
         	horaPartida: "02:00",
         	horaChegada: "03:30",
         	tempoVoo: "01:30",
-        	//teste: new Date().parse("hh:mm", '01:15'),
 			tipo: "DIRETO",
 			origem: passos,
 			destino: sanca
@@ -251,7 +250,7 @@ class BootStrap {
         //Criando voo de Escala Bogota > Passos
         def Voo01Escala = new Voo(
         	numeroVoo: "Voo" + bogotaPassos.origem + bogotaPassos.destino + new Date().format("dd_MM_yy"),
-        	data: new Date(),
+        	data: new Date().clearTime(),
         	lugaresDisponiveis: aviao2.quantidadePoltrona,
         	aviao: aviao2,
         	especificacao: bogotaPassos
@@ -260,10 +259,10 @@ class BootStrap {
         if(Voo01Escala.hasErrors())
         	println Voo01Escala.errors
         	
-        //Criando Voo direto, derivado da escala assima Bogota > Sanca
+        //Criando Voo direto, derivado da escala acima Bogota > Sanca
         def Voo01DiretoA = new Voo(
         	numeroVoo: "Voo" + bogotaSanca.origem + bogotaSanca.destino + new Date().format("dd_MM_yy"),
-        	data: new Date(),
+        	data: new Date().clearTime(),
         	lugaresDisponiveis: aviao2.quantidadePoltrona,
         	aviao: aviao2,
         	especificacao: bogotaSanca
@@ -273,10 +272,10 @@ class BootStrap {
         	println Voo01DiretoA.errors
         	
         	
-        //Criando Voo direto, derivado da escala assima Sanca > Passos
+        //Criando Voo direto, derivado da escala acima Sanca > Passos
         def Voo01DiretoB = new Voo(
         	numeroVoo: "Voo" + sancaPassos.origem + sancaPassos.destino + new Date().format("dd_MM_yy"),
-        	data: new Date(),
+        	data: new Date().clearTime(),
         	lugaresDisponiveis: aviao2.quantidadePoltrona,
         	aviao: aviao2,
         	especificacao: sancaPassos
@@ -284,6 +283,19 @@ class BootStrap {
         Voo01DiretoB.save()
         if(Voo01DiretoB.hasErrors())
         	println Voo01DiretoB.errors
+        
+        
+        //Criando Voo direto, Passos > Ponte
+        def Voo01DiretoC = new Voo(
+        	numeroVoo: "Voo" + passosPonte.origem + passosPonte.destino + new Date().format("dd_MM_yy"),
+        	data: new Date().clearTime(),
+        	lugaresDisponiveis: 0d, //este é um exemplo de voo já lotado
+        	aviao: aviao2,
+        	especificacao: passosPonte
+        )
+        Voo01DiretoC.save()
+        if(Voo01DiretoC.hasErrors())
+        	println Voo01DiretoC.errors
         
         println 'Populando Voo'
         

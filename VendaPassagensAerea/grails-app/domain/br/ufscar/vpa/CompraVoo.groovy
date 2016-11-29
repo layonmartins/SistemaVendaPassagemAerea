@@ -3,12 +3,12 @@ package br.ufscar.vpa
 class CompraVoo {
 
     static constraints = {
-    	numeroPoltrona(nullable:false, min:1)
-    	nomePassageiro(nullable:false)
+    	passageiro(nullable:false)
+    	index(display: false)
     }
     
-    int numeroPoltrona
-    String nomePassageiro
+    int index
+    String passageiro
     
     Compra compra
     Voo voo
