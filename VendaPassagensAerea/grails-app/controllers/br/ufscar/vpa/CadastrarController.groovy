@@ -21,6 +21,11 @@ class CadastrarController {
         if (cliente.hasErrors()) {
             println cliente.errors
         }
+        
+        def clientePapel = Papel.findByAuthority("ROLE_CLIENTE") ?:
+        new Papel(authority: "ROLE_CLIENTE").save()
+        
+         UsuarioPapel.create(cliente,clientePapel)
     
     	render("<h1>Cadastrado com Sucesso!</h1>")
     	
