@@ -8,6 +8,7 @@ class Voo {
     	data(nullable: false)
     	lugaresDisponiveis(nullable:false, min: 0)
     	aviao(nullable: false)
+    	especificacao(nullable: false)
     }
     
     String numeroVoo
@@ -16,5 +17,10 @@ class Voo {
     
     Aviao aviao
     Especificacao especificacao
+    
+    @Override
+	String toString(){
+		return 'Voo_id.: [ ' + id + '] - Voo: [' + especificacao.origem + ' >> ' + especificacao.destino + '] - data: [' + data +']'
+	}
     
 }

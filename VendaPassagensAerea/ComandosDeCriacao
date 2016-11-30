@@ -69,8 +69,16 @@ generate-all br.ufscar.vpa.Cliente
 #configurado e funcionando
 
 
+#fazer opções login e logout no sistema
+#feito
 
+#fazer cadastro de clientes manual
+> grails create-controller br.ufscar.vpa.Cadastrar
 
+#fazer minhas compras manual
+> grails create-controller br.ufscar.vpa.MinhasCompras
+
+#Obs alteração: o cliente do sistema não precisa de passaporte, somente o passageiro da passagem comprado precisa
 
 
 

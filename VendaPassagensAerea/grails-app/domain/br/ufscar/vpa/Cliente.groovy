@@ -7,7 +7,6 @@ class Cliente extends Usuario{
 		sobreNome (blank: false, size:1..20)
 		email (blank: false, unique: true, email: true)
 		dataNascimento (blank: false)
-		passaporte (blank: false)
 		username blank: false, unique: true
 		password blank: false, password: true
     }
@@ -16,7 +15,6 @@ class Cliente extends Usuario{
 	String sobreNome
 	String email
 	Date dataNascimento
-	String passaporte
 	
 	@Override
 	String toString(){

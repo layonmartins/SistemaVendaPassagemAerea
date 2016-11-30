@@ -37,11 +37,10 @@ class BootStrap {
         new Papel(authority: "ROLE_CLIENTE").save()
                 
         def cliente = new Cliente(
-            nome: "Cliente",
+            nome: "Carlos da Silva",
             sobreNome: "Teste",
             email: "cliente@cliente.com",
             dataNascimento: new Date().clearTime(),
-            passaporte: "0001.00001.000-03",
             username: "c",
             password: "c",
             enabled : true
@@ -53,8 +52,46 @@ class BootStrap {
         }
         
         UsuarioPapel.create(cliente,clientePapel)
+        
+         def cliente2 = new Cliente(
+            nome: "Juninhoo",
+            sobreNome: "Meu Filho",
+            email: "juninho@cliente.com",
+            dataNascimento: new Date().clearTime(),
+            username: "j",
+            password: "j",
+            enabled : true
+        )
+        
+        cliente2.save()
+        if (cliente2.hasErrors()) {
+            println cliente2.errors
+        }
+        
+        UsuarioPapel.create(cliente2,clientePapel)
+        
+        def cliente3 = new Cliente(
+            nome: "Maria",
+            sobreNome: "Santissima",
+            email: "maria@cliente.com",
+            dataNascimento: new Date().clearTime(),
+            username: "maria",
+            password: "maria",
+            enabled : true
+        )
+        
+        cliente3.save()
+        if (cliente3.hasErrors()) {
+            println cliente3.errors
+        }
+        
+        UsuarioPapel.create(cliente3,clientePapel)
        
         println 'populando cliente  - ok'
+        
+        
+        
+        
         
         
         def aviao1 = new Aviao(
@@ -300,7 +337,56 @@ class BootStrap {
         println 'Populando Voo'
         
         
+        //Salvando a compra
+        def compra1 = new Compra(
+        	data: new Date().clearTime(),
+        	cliente: cliente
+        )
+        compra1.save(flush:true)
+        if(compra1.hasErrors())
+        	println compra1.erros
+        //Salvando os itens da compra
+        def passagem1 = new CompraVoo(
+        	passageiro: cliente.nome,
+        	passaporte: '0001.00001.000-01',
+        	compra: compra1,
+        	voo: Voo01DiretoC
+        )
+        passagem1.save(flush:true)
+        if(passagem1.hasErrors())
+        	println passagem1.errors
         
+         def passagem2 = new CompraVoo(
+        	passageiro: 'Felizmina',
+        	passaporte: '0001.00001.000-02',
+        	compra: compra1,
+        	voo: Voo01DiretoC
+        )
+        passagem2.save(flush:true)
+        if(passagem2.hasErrors())
+        	println passagem2.errors
+
+
+	//Segunda compra
+	 def compra2 = new Compra(
+        	data: new Date().clearTime(),
+        	cliente: cliente2
+        )
+        compra2.save(flush:true)
+        if(compra2.hasErrors())
+        	println compra2.erros
+        //Salvando os itens da compra
+        def passagem3 = new CompraVoo(
+        	passageiro: 'Juninho',
+        	passaporte: '0001.00001.000-03',
+        	compra: compra2,
+        	voo: Voo01DiretoB
+        )
+        passagem3.save(flush:true)
+        if(passagem3.hasErrors())
+        	println passagem3.errors
+	        	
+        println 'Fazendo compras de passagens - ok'
     }
     def destroy = {
     }

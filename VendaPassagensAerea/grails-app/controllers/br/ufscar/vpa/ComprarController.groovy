@@ -1,8 +1,5 @@
 package br.ufscar.vpa
 
-import org.springframework.security.access.annotation.Secured
-
-@Secured(['ROLE_CLIENTE'])
 class ComprarController {
 
 //Criando uma compra, e uma lista de itens de compras
@@ -33,6 +30,7 @@ class ComprarController {
     
     	def compravoo = new CompraVoo()
     	compravoo.passageiro = params.passageiro
+    	compravoo.passaporte = params.passaporte
     	compravoo.compra = minhaCompra
     	compravoo.voo = Voo.get(params.id)
     	index++ //faz parte da gambi do id
@@ -92,11 +90,8 @@ class ComprarController {
    
     def finalizarCompra(){
     	//Salvar um cliente. Este passo devera pegar o cliente autenticado.
-    	//porém como eu não sei fazer isso vou criar um provisorio
     	def idCliente = springSecurityService.currentUser.id
-    	def cliente = Cliente.get(idCliente)
-        
-        
+    	def cliente = Cliente.get(idCliente)        
         
     	//salvar compra
     	minhaCompra.data = new Date().clearTime()

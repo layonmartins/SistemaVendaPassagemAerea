@@ -15,7 +15,17 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**/css/**',      access: ['permitAll']],
 	[pattern: '/**/images/**',   access: ['permitAll']],
 	[pattern: '/**/favicon.ico', access: ['permitAll']],
-	[pattern: '/comprar/*', access: ['permitAll']]
+	[pattern: '/aviao/*', access: ['ROLE_ADMIN']],
+	[pattern: '/cadastrar/*', access: ['permitAll']],
+	[pattern: '/cidade/*', access: ['ROLE_ADMIN']],
+	[pattern: '/cliente/*', access: ['ROLE_ADMIN']],
+	[pattern: '/compra/*', access: ['ROLE_ADMIN']],
+	[pattern: '/comprar/*', access: ['ROLE_CLIENTE']],
+	[pattern: '/compraVoo/*', access: ['ROLE_ADMIN']],
+	[pattern: '/especificacao/*', access: ['ROLE_ADMIN']],
+	[pattern: '/minhascompras/*', access: ['ROLE_CLIENTE']],
+	[pattern: '/voo/*', access: ['ROLE_ADMIN']]
+	
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [
@@ -28,4 +38,5 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 ]
 
 grails.plugin.springsecurity.logout.postOnly = false
+
 

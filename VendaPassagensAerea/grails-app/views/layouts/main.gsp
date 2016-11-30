@@ -26,8 +26,16 @@
                 <a class="navbar-brand" href="/#">
                     <i class="fa grails-icon">
                         <asset:image src="grails-cupsonly-logo-white.svg"/>
-                    </i> Grails
+                    </i> Varingrails
                 </a>
+                <sec:ifLoggedIn>
+				<h1>Bem vindo sr(a): <sec:username/></h1>
+				<div class="right">
+				<g:link controller="logout" >Logout</g:link>
+				</div>
+				</sec:ifLoggedIn>
+					
+					
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
                 <ul class="nav navbar-nav navbar-right">

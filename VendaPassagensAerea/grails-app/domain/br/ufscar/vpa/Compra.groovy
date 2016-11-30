@@ -10,4 +10,9 @@ class Compra {
     
     Date data
     Cliente cliente
+    
+    @Override
+	String toString(){
+		return 'id[' + id + '] data[' + data + '] cliente[' + cliente +  ']'
+	}
 }
