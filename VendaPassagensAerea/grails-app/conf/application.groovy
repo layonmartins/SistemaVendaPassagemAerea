@@ -18,13 +18,19 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/aviao/*', access: ['ROLE_ADMIN']],
 	[pattern: '/cadastrar/*', access: ['permitAll']],
 	[pattern: '/cidade/*', access: ['ROLE_ADMIN']],
-	[pattern: '/cliente/*', access: ['ROLE_ADMIN']],
-	[pattern: '/compra/*', access: ['ROLE_ADMIN']],
+	[pattern: '/cliente/index', access: ['ROLE_ADMIN']],
+	[pattern: '/cliente/show', access: ['ROLE_ADMIN']],
+	[pattern: '/cliente/edit', access: ['ROLE_ADMIN']],
+	[pattern: '/cliente/update', access: ['ROLE_ADMIN']],
+	[pattern: '/compra/index*', access: ['ROLE_ADMIN']],
+	[pattern: '/compra/show*', access: ['ROLE_ADMIN']],
 	[pattern: '/comprar/*', access: ['ROLE_CLIENTE']],
-	[pattern: '/compraVoo/*', access: ['ROLE_ADMIN']],
+	[pattern: '/compraVoo/index', access: ['ROLE_ADMIN']],
+	[pattern: '/compraVoo/show', access: ['ROLE_ADMIN']],
 	[pattern: '/especificacao/*', access: ['ROLE_ADMIN']],
 	[pattern: '/minhascompras/*', access: ['ROLE_CLIENTE']],
-	[pattern: '/voo/*', access: ['ROLE_ADMIN']]
+	[pattern: '/voo/*', access: ['ROLE_ADMIN']],
+	[pattern: '/main/index', access: ['permitAll']]
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [

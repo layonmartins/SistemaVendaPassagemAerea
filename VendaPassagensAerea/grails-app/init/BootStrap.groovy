@@ -20,6 +20,7 @@ class BootStrap {
         def admin = new Usuario(
             username: "a",
             password: "a",
+            nomeCompleto: "Layon Martins",
             enabled : true
         )
         
@@ -37,12 +38,13 @@ class BootStrap {
         new Papel(authority: "ROLE_CLIENTE").save()
                 
         def cliente = new Cliente(
-            nome: "Carlos da Silva",
-            sobreNome: "Teste",
+            nome: "Carlos",
+            sobreNome: "da Silva Teste",
             email: "cliente@cliente.com",
             dataNascimento: new Date().clearTime(),
             username: "c",
             password: "c",
+            nomeCompleto: "Carlos da Silva Teste",
             enabled : true
         )
         
@@ -60,6 +62,7 @@ class BootStrap {
             dataNascimento: new Date().clearTime(),
             username: "j",
             password: "j",
+            nomeCompleto: "Juninho Meu Filho",
             enabled : true
         )
         
@@ -72,11 +75,12 @@ class BootStrap {
         
         def cliente3 = new Cliente(
             nome: "Maria",
-            sobreNome: "Santissima",
+            sobreNome: "Nazaré",
             email: "maria@cliente.com",
             dataNascimento: new Date().clearTime(),
             username: "maria",
             password: "maria",
+            nomeCompleto: "Maria de Nazaré",
             enabled : true
         )
         

@@ -14,6 +14,7 @@ class CadastrarController {
             dataNascimento: Date.parse('yyyy-MM-dd', params.data),
             username: params.username,
             password: params.password,
+            nomeCompleto: params.nome + ' ' + params.sobreNome,
             enabled : true
         )
         

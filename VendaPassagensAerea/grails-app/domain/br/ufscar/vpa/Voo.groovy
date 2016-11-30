@@ -20,7 +20,7 @@ class Voo {
     
     @Override
 	String toString(){
-		return 'Voo_id.: [ ' + id + '] - Voo: [' + especificacao.origem + ' >> ' + especificacao.destino + '] - data: [' + data +']'
+		return 'Voo: ' + especificacao?.origem + ' >> ' + especificacao?.destino + ' data: [' + data +']'
 	}
     
 }

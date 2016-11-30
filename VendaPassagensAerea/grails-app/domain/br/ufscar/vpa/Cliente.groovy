@@ -9,6 +9,7 @@ class Cliente extends Usuario{
 		dataNascimento (blank: false)
 		username blank: false, unique: true
 		password blank: false, password: true
+		nomeCompleto blank: false
     }
     
     String nome

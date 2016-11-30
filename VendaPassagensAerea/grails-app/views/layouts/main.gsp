@@ -29,11 +29,14 @@
                     </i> Varingrails
                 </a>
                 <sec:ifLoggedIn>
-				<h1>Bem vindo sr(a): <sec:username/></h1>
-				<div class="right">
+				<h1>Bem&nbsp;Vindo&nbsp;Sr(a):&nbsp;<sec:username/></h1>
+				<div>
 				<g:link controller="logout" >Logout</g:link>
 				</div>
 				</sec:ifLoggedIn>
+				<sec:ifNotLoggedIn>
+				<g:link controller='login' action='auth'>Login</g:link>
+				</sec:ifNotLoggedIn>
 					
 					
             </div>
@@ -48,7 +51,7 @@
     <g:layoutBody/>
 
     <div class="footer" role="contentinfo"></div>
-
+	LTDA - VarinGrails
     <div id="spinner" class="spinner" style="display:none;">
         <g:message code="spinner.alt" default="Loading&hellip;"/>
     </div>

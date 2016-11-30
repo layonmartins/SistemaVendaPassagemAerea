@@ -80,5 +80,9 @@ generate-all br.ufscar.vpa.Cliente
 
 #Obs alteração: o cliente do sistema não precisa de passaporte, somente o passageiro da passagem comprado precisa
 
+#Criar o controller Main que gerencia a pagina inicial da aplicação
+> grails create-controller br.ufscar.vpa.MainController
+
+
 
 
