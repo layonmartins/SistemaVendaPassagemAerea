@@ -18,9 +18,9 @@ class BootStrap {
         new Papel(authority: "ROLE_ADMIN").save()
                 
         def admin = new Usuario(
-            username: "a",
-            password: "a",
-            nomeCompleto: "Layon Martins",
+            username: "admin",
+            password: "admin",
+            nomeCompleto: "Administrador",
             enabled : true
         )
         
@@ -38,12 +38,12 @@ class BootStrap {
         new Papel(authority: "ROLE_CLIENTE").save()
                 
         def cliente = new Cliente(
-            nome: "Carlos",
-            sobreNome: "da Silva Teste",
-            email: "cliente@cliente.com",
+            nome: "Fulano",
+            sobreNome: "da Silva",
+            email: "fulano@cliente.com",
             dataNascimento: new Date().clearTime(),
-            username: "c",
-            password: "c",
+            username: "fulano",
+            password: "fulano",
             nomeCompleto: "Carlos da Silva Teste",
             enabled : true
         )
@@ -60,8 +60,8 @@ class BootStrap {
             sobreNome: "Meu Filho",
             email: "juninho@cliente.com",
             dataNascimento: new Date().clearTime(),
-            username: "j",
-            password: "j",
+            username: "juninho",
+            password: "juninho",
             nomeCompleto: "Juninho Meu Filho",
             enabled : true
         )
@@ -74,13 +74,13 @@ class BootStrap {
         UsuarioPapel.create(cliente2,clientePapel)
         
         def cliente3 = new Cliente(
-            nome: "Maria",
-            sobreNome: "Nazaré",
-            email: "maria@cliente.com",
+            nome: "Cicrano",
+            sobreNome: "de Tal",
+            email: "cicrano@cliente.com",
             dataNascimento: new Date().clearTime(),
-            username: "maria",
-            password: "maria",
-            nomeCompleto: "Maria de Nazaré",
+            username: "cicrano",
+            password: "cicrano",
+            nomeCompleto: "Cicrano de Tal",
             enabled : true
         )
         
