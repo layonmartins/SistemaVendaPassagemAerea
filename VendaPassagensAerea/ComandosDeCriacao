@@ -94,6 +94,8 @@ ERROS:
 
 #Obs: Número de poltronas deve ser pego do avião e nao digitado no voo - Gabriel, esta parte não parece ser tão facil, pois esta tela foi gerado no Scaffold e nem consegui achar o <input type="text"... para add o numero via ajax. Talves vc tenha que criar uma tela do zero igual eu fiz no controler Comprar ou no Cadastro de Cliente.
 
+#Obs: A tela de cadastro deve verificar se o email ou usuario já estão cadastrados no banco, caso tiver imperdir o cadastro pq da um erro pois estes são atributos Unicos
 
+#Obs: A tela de login trocar Username por 'Login'
 
 
