@@ -25,9 +25,8 @@
 					<ul>
 						<li><g:link controller='aviao' action='index'>Cadastrar Avião</g:link></li>
 						<li><g:link controller='cidade' action='index'>Cadastrar Cidades</g:link></li>
-						<li><g:link controller='cliente' action='index'>Clientes</g:link></li>
-						<li><g:link controller='compra' action='index'>Compras dos Clientes</g:link></li>
-						<li><g:link controller='compraVoo' action='index'>ComprasVoo</g:link></li>
+						<li><g:link controller='cliente' action='index'>Consultar Clientes</g:link></li>
+						<li><g:link controller='compra' action='index'>Consultar Compras</g:link></li>
 						<li><g:link controller='especificacao' action='index'>Cadastro de Especificações de Voo</g:link></li>
 						<li><g:link controller='voo' action='index'>Cadastro de Voos</g:link></li>
 					</ul>
@@ -39,6 +38,9 @@
 					<ul>
 						<li><g:link controller='comprar' action='index'>Comprar Passagens</g:link></li>
 						<li><g:link controller='minhasCompras' action='index'>Minhas Passagens</g:link></li>
+						
+%{--						No botão a baixo não consegui pegar o id do usuario logado para editar então coloquei 2--}%
+						<li><g:link controller='Cliente' action='edit' id="2">Editar meus dados</g:link></li>
 					</ul>
 				</sec:ifAnyGranted>
 		</sec:ifLoggedIn> 

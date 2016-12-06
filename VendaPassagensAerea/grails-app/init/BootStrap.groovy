@@ -162,6 +162,7 @@ class BootStrap {
         
         //ESCALA (Ponte > Bogota) Parada(Sanca)
         def ponteBogota = new Especificacao(
+        	numEspecificacao: "001",
         	custo: 500d,
         	horaPartida: "01:00",
         	horaChegada: "10:00",
@@ -177,6 +178,7 @@ class BootStrap {
         //Pertence(Escala(Ponte > Bogota))
         //DIRETO (Ponte > Sanca)
         def ponteSanca = new Especificacao(
+        	numEspecificacao: "002",
         	custo: 100d,
         	horaPartida: "01:00",
         	horaChegada: "03:30",
@@ -192,6 +194,7 @@ class BootStrap {
          //Pertence(Escala(Ponte > Bogota))
           //DIRETO (Sanca > Bogota)
         def sancaBogota = new Especificacao(
+        	numEspecificacao:"003",
         	custo: 400d,
         	horaPartida: "04:30",
         	horaChegada: "10:00",
@@ -210,6 +213,7 @@ class BootStrap {
         
          //ESCALA (Bogota > Passos) Parada(Sanca)
         def bogotaPassos = new Especificacao(
+        	numEspecificacao: "004",
         	custo: 600d,
         	horaPartida: "13:00",
         	horaChegada: "20:00",
@@ -225,6 +229,7 @@ class BootStrap {
         //Pertence(Escala(Bogota > Passos))	
         //DIRETO (Bogota> Sanca)
         def bogotaSanca = new Especificacao(
+        	numEspecificacao: "005",
         	custo: 450d,
         	horaPartida: "13:00",
         	horaChegada: "17:00",
@@ -240,6 +245,7 @@ class BootStrap {
         //Pertence(Escala(Bogota > Passos))
          //DIRETO (Sanca > Passos)
         def sancaPassos = new Especificacao(
+        	numEspecificacao: "006",
         	custo: 450d,
         	horaPartida: "18:00",
         	horaChegada: "20:00",
@@ -255,6 +261,7 @@ class BootStrap {
         	
         //DIRETO (Passos > Sanca)
         def passosSanca = new Especificacao(
+        	numEspecificacao: "007",
         	custo: 100d,
         	horaPartida: "02:00",
         	horaChegada: "03:30",
@@ -270,6 +277,7 @@ class BootStrap {
         	
         //DIRETO (Passos > Ponte)
         def passosPonte = new Especificacao(
+        	numEspecificacao: "008",
         	custo: 50d,
         	horaPartida: "13:00",
         	horaChegada: "13:05",
@@ -284,7 +292,7 @@ class BootStrap {
         	
         	
         
-        println 'populando especificacoes ESCALA e DIRETA'
+        println 'populando especificacoes ESCALA erun DIRETA'
         
         
         

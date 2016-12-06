@@ -16,6 +16,6 @@
        <div id="listCompras">
        		
        </div>
-       
+       <button onClick="location.href='../Comprar'"">Comprar Nova Passagem</button>       
     </body>
 </html>

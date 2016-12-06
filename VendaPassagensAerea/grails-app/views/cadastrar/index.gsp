@@ -20,7 +20,7 @@
 		Email <input type="email" name="email" value="beltrano@cliente.com" required="required"/><br/>
 		Data Nasc <input type="date" name="data" value="${new Date().format('yyyy-MM-dd')}"/><br/>
 		Login <input type="text" name="username" value="beltrano" required="required"/><br/>
-		Senha <input type="password" name="password" value="123" required="required"/><br/>
+		Senha <input type="password" name="password" value="beltrano" required="required"/><br/>
 		<input type="submit" name="salvar" value="Salvar"/>	
 		<input type="button" name="btnCancelar" value="Cancelar" onClick="location.href='../'"/><br>
 		</g:formRemote>
