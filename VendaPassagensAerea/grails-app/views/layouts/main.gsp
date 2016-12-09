@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>
-        <g:layoutTitle default="Grails"/>
+        <g:layoutTitle default="VaringGrails"/>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -14,44 +14,47 @@
 </head>
 <body>
 
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/#">
-                    <i class="fa grails-icon">
-                        <asset:image src="grails-cupsonly-logo-white.svg"/>
-                    </i> Varingrails
-                </a>
-                <sec:ifLoggedIn>
-				<h1>Bem&nbsp;Vindo&nbsp;Sr(a):&nbsp;<sec:username/></h1>
-				<div>
-				<g:link controller="logout" >Logout</g:link>
-				</div>
-				</sec:ifLoggedIn>
-				<sec:ifNotLoggedIn>
-				<g:link controller='login' action='auth'>Login</g:link>
-				</sec:ifNotLoggedIn>
-					
-					
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">VarinGrails</a></li>
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Bem&nbsp;Vindo&nbsp;Sr(a):&nbsp;<sec:username/></a></li>
+                                <sec:ifLoggedIn>
+                                    <li><g:link controller="logout" >Logout</g:link></li>
+                                </sec:ifLoggedIn>
+                                <sec:ifNotLoggedIn>
+                                    <li><g:link controller='login' action='auth'>Login</g:link></li>
+                                </sec:ifNotLoggedIn>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
             </div>
-            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
-                <ul class="nav navbar-nav navbar-right">
-                    <g:pageProperty name="page.nav" />
-                </ul>
-            </div>
+            <div class="col-md-1"></div>
         </div>
     </div>
-
     <g:layoutBody/>
 
-    <div class="footer" role="contentinfo"></div>
-	LTDA - VarinGrails
     <div id="spinner" class="spinner" style="display:none;">
         <g:message code="spinner.alt" default="Loading&hellip;"/>
     </div>

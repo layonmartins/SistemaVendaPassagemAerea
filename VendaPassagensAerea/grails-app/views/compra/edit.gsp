@@ -6,6 +6,11 @@
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
     </head>
     <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                
         <a href="#edit-compra" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
@@ -36,5 +41,9 @@
                 </fieldset>
             </g:form>
         </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
     </body>
 </html>
